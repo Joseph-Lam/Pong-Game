@@ -22,9 +22,9 @@ export default class Ball {
   	}
 
   	randomSound() {
-  		const sound1 = new Audio("../build/sounds/pong-01.wav")
-		const sound2 = new Audio("../build/sounds/pong-02.wav")
-		const sound3 = new Audio("../build/sounds/pong-03.wav")
+  		const sound1 = new Audio("../assets/sounds/pong-01.wav")
+		const sound2 = new Audio("../assets/sounds/pong-02.wav")
+		const sound3 = new Audio("../assets/sounds/pong-03.wav")
 
 		var soundArray = [sound1, sound2, sound3];
 		var rand = Math.random();
