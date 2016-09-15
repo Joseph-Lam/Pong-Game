@@ -22,7 +22,7 @@ export default class Ball {
   	}
 
   	randomSound() {
-  		const sound1 = new Audio("../assets/sounds/pong-01.wav")
+  	const sound1 = new Audio("../assets/sounds/pong-01.wav")
 		const sound2 = new Audio("../assets/sounds/pong-02.wav")
 		const sound3 = new Audio("../assets/sounds/pong-03.wav")
 
@@ -62,8 +62,12 @@ export default class Ball {
   				if (hitRightPaddle) {
   					this.x = player2.x - this.size;
   					this.y = Math.floor(this.y - this.vy + this.vy * k);
-  					this.vx = -this.vx * 1.10;
-  					this.randomSound();
+            this.vx = -this.vx * 1.10;
+            this.randomSound();
+            if (this.vx > 10) {
+              this.vx = 10;
+            }
+  					
   				}
   			}
   		} else {
@@ -79,7 +83,11 @@ export default class Ball {
   					this.x = player1.x + player1.width;
   					this.y = Math.floor(this.y - this.vy + this.vy * k);
   					this.vx = -this.vx * 1.10;
-  					this.randomSound();
+            this.randomSound();
+            if (this.vx > 10) {
+              this.vx = 10;
+            }
+            
   				}
   			}
   		}
