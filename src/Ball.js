@@ -12,6 +12,8 @@ export default class Ball {
       	this.width = width;
   		}
 
+
+
   	draw(ctx) {
   		//draw the ball
   		ctx.fillStyle = 'red';
@@ -67,7 +69,6 @@ export default class Ball {
             if (this.vx > 10) {
               this.vx = 10;
             }
-  					
   				}
   			}
   		} else {
@@ -81,13 +82,12 @@ export default class Ball {
   				player1.y + player1.height;
   				if (hitLeftPaddle) {
   					this.x = player1.x + player1.width;
-  					this.y = Math.floor(this.y - this.vy + this.vy * k);
+  					this.y = Math.floor(this.y - this.vy + this.vy * k);            
   					this.vx = -this.vx * 1.10;
             this.randomSound();
             if (this.vx > 10) {
               this.vx = 10;
-            }
-            
+            }   
   				}
   			}
   		}
@@ -121,8 +121,8 @@ export default class Ball {
   		this.x += this.vx;
   		this.y += this.vy;
   		//wallBounce
-		this.wallBounce(ctx);
-		//paddle collisions
+		  this.wallBounce(ctx);
+		  //paddle collisions
   		this.paddleCollision(player1, player2);
   		this.goal(player1, player2);
   	}
